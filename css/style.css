@@ -1,0 +1,190 @@
+:root {
+  --main-color: #10cab7;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Work Sans", sans-serif;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 750px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 970px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+}
+
+header {
+  padding: 20px;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .container img {
+  width: 70px;
+}
+
+header .container .links {
+  position: relative;
+}
+
+header .container .links:hover>span>span:nth-child(2) {
+  width: 100%;
+}
+
+header .container .links>span {
+  width: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+header .container .links>span span {
+  background-color: black;
+  margin-bottom: 5px;
+}
+
+header .container .links>span>span:nth-child(1) {
+  width: 100%;
+  height: 2px;
+}
+
+header .container .links>span>span:nth-child(2) {
+  width: 50%;
+  height: 2px;
+  transition: 0.3s;
+}
+
+header .container .links>span>span:nth-child(3) {
+  width: 100%;
+  height: 2px;
+}
+
+header .container .links nav ul {
+  position: absolute;
+  color: black;
+  background-color: #f6f6f6;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  right: 0px;
+  top: calc(100% + 15px);
+  min-width: 200px;
+  display: none;
+}
+
+header .container .links:hover nav ul {
+  display: block;
+}
+
+header .container .links nav ul::before {
+  content: "";
+  position: absolute;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent #f6f6f6 transparent;
+  right: 5px;
+  top: -21px;
+}
+
+header .container .links nav ul li:not(:last-child) a {
+  border-bottom: 1px solid rgb(221, 221, 198);
+}
+
+header .container .links nav ul a {
+  display: block;
+  padding: 15px;
+  color: black;
+  text-align: left;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+header .container .links nav ul a:hover {
+  padding-left: 25px;
+}
+
+.landing {
+  background-image: url(../images/landing.jpg);
+  background-size: cover;
+  height: calc(100vh - 68px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing .text {
+  text-align: center;
+  width: 320px;
+  max-width: 100%;
+}
+
+.landing .text h1 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 50px;
+  color: var(--main-color);
+}
+
+.landing .text p {
+  font-size: 20px;
+}
+
+.features {
+  background-color: #f6f6f6;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.features .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-content: center;
+  gap: 20px;
+}
+
+.features .container>div {
+  text-align: center;
+}
+
+.features .container>div i {
+  color: var(--main-color);
+}
+
+.features .container>div h3 {
+  font-weight: 800;
+  margin: 30px 0;
+}
+
+.features .container>div p {
+  line-height: 1.8;
+  font-size: 17px;
+  color: #777;
+}
