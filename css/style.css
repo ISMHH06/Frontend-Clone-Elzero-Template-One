@@ -1,11 +1,18 @@
 :root {
   --main-color: #10cab7;
+  --secondary-color: #2c4755;
+  --main-padding-top: 60px;
+  --main-padding-bottom: 60px;
 }
 
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+html , body {
+  overflow-x: hidden;
 }
 
 body {
@@ -33,28 +40,33 @@ body {
   margin-top: -30px;
   text-align: center;
 }
+
 @media (max-width: 768px) {
-  .container {
-    max-width: 750px;
-  }
   .special-heading {
     font-size: 60px;
   }
-  .special-heading + p{
+  
+  .special-heading+p {
     font-size: 17px;
     margin-top: -20px;
   }
 }
 
-@media (max-width: 992px) {
+@media (min-width: 768px) {
   .container {
-    max-width: 970px;
+    width: 750px;
   }
 }
 
-@media (max-width: 1200px) {
+@media (min-width: 992px) {
   .container {
-    max-width: 1170px;
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
   }
 }
 
@@ -176,12 +188,13 @@ header .container .links nav ul a:hover {
 
 .landing .text p {
   font-size: 20px;
+  line-height: 1.8;
 }
 
 .features {
   background-color: #f6f6f6;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
 }
 
 .features .container {
@@ -210,9 +223,137 @@ header .container .links nav ul a:hover {
   color: #777;
 }
 
+.Services {
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+}
+
 .Services .container > div {
   display: grid;
   grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
   gap: 30px;
+}
+
+@media (max-width: 768px) {
+  .Services .container>div{
+    margin-top: 100px;
+  }
+  .Services .container>div .col1>div,
+  .Services .container>div .col2>div {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+}
+
+.Services .container i {
+  color: var(--main-color);
+}
+
+.Services .container>div .col1 > div,
+.Services .container>div .col2 > div {
+  display: flex;
+  gap: 15px;
+  margin-top: 40px;
+}
+
+@media (min-width: 1200px) {
+  .Services .container>div .col2>div:last-child {
+    margin-top: 62px;
+  }
+}
+
+
+.Services .container>div .col1 > div h3,
+.Services .container>div .col2>div h3{
+  margin-top: 0;
+}
+
+.Services .container>div .col1 div p,
+.Services .container>div .col2 div p{
+  line-height: 1.6;
+}
+
+.Services .container>div >div:last-child {
+  text-align: center;
+  position: relative;
+}
+
+.Services .container>div >div:last-child img{
+  width: 270px;
+}
+
+@media (max-width: 1199px){
+  .Services .container>div >div:last-child {
+    display: none;
+  }
+}
+
+.Services .container>div >div:last-child::before{
+  content: "";
+  position: absolute;
+  background-color: var(--secondary-color);
+  right: 0;
+  top: -55px;
+  width: 110px;
+  height: calc(100% + 110px);
+  z-index: -1;
+}
+
+.Portfolio  {
+  background-color: #f6f6f6;
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+}
+
+.Portfolio .container > div{
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+  gap: 30px;
+  margin-top: 70px;
+}
+
+.Portfolio .container > div{
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+}
+
+.Portfolio .container > div > div{
+  background-color: white;
+}
+
+.Portfolio .container > div img{
+  width: 100%;
+}
+
+.Portfolio .container > div > div > div{
+  padding: 20px;
+}
+
+.Portfolio .container > div > div > div h3{
+  margin: 0;
+}
+
+.Portfolio .container > div > div > div p{
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.About {
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+}
+
+.About .container > div{
+  display: flex;
+  align-items: center;
+  gap: 150px;
+}
+
+.About .container>div>div img {
+  width: 270px;
 }
 
