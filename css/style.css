@@ -11,6 +11,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html , body {
   overflow-x: hidden;
 }
@@ -232,6 +236,7 @@ header .container .links nav ul a:hover {
   display: grid;
   grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
   gap: 30px;
+  margin-top: 150px;
 }
 
 @media (max-width: 768px) {
@@ -297,7 +302,7 @@ header .container .links nav ul a:hover {
   position: absolute;
   background-color: var(--secondary-color);
   right: 0;
-  top: -55px;
+  top: -70px;
   width: 110px;
   height: calc(100% + 110px);
   z-index: -1;
@@ -347,13 +352,149 @@ header .container .links nav ul a:hover {
   padding-bottom: var(--main-padding-bottom);
 }
 
-.About .container > div{
+.About .container > div {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 150px;
+  justify-content: space-between;
+  margin-top: 150px;
+}
+ 
+.About .container>div>div:first-child {
+  position: relative;
+  width: 270px;
+  height: 375px;
 }
 
-.About .container>div>div img {
-  width: 270px;
+.About .container>div>div:first-child img {
+  max-width: 100%;
 }
+
+.About .container>div>div:first-child::before {
+  content: "";
+  width: 120px;
+  height: calc(100% + 80px);
+  background-color: #ebeced;
+  position: absolute;
+  z-index: -1;
+  right: 190px;
+  top: -28px;
+}
+
+.About .container>div>div:first-child::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 88%;
+  border-left: 90px solid var(--main-color);
+  border-bottom: 80px solid var(--main-color);
+  top: -28px;
+  right: -152px;
+  z-index: -1;
+}
+
+.About .container>div>div:nth-child(2){
+  flex-basis: calc(100% - 500px);
+}
+
+.About .container>div>div:nth-child(2) p:nth-child(1){
+  font-weight: bolder;
+  line-height: 1.8;
+}
+
+.About .container>div>div:nth-child(2) hr {
+  width: 50%;
+  height: 2px;
+  margin-top: 70px;
+  margin-bottom: 30px;
+  background-color: var(--main-color);
+  border: none;
+  margin-left: 0;
+}
+
+.About .container>div>div:nth-child(2) p:nth-child(3){
+  line-height: 1.8;
+}
+
+@media (max-width: 991px) {
+  .About .container>div{
+    flex-direction: column;
+  }
+  .About .container>div>div:first-child::before{
+    display: none;
+  }
+  .About .container>div>div:first-child::after{
+    display: none;
+  }
+  .About .container>div>div:nth-child(2) {
+    margin-top: 80px;
+    text-align: center;
+  }
+  .About .container>div>div:nth-child(2) hr{
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.Contact {
+  background-color: #f6f6f6;
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+  margin-top: 70px;
+}
+
+.Contact .container > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 100px;
+  height: 130px;
+}
+
+.Contact .container {
+  padding-bottom: 70px;
+}
+
+.Contact .container > div p{
+  font-size: 35px;
+  font-weight: 800;
+  color: var(--secondary-color);
+  margin: 0;
+  letter-spacing: -2px;
+}
+
+.Contact .container > div a{
+  font-size: 35px;
+  font-weight: 800;
+  color: var(--main-color);
+  letter-spacing: -1px;
+  text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  .Contact .container>div p,
+  .Contact .container>div a {
+    font-size: 25px;
+  }
+}
+
+.Contact .container>div > div {
+  font-size: 18px;
+}
+
+footer {
+  background-color: var(--secondary-color);
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  word-spacing: 1px;
+}
+footer span {
+  color: var(--main-color);
+  font-weight: 700;
+}
+
 
